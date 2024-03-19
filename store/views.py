@@ -27,3 +27,9 @@ def checkout(request):
         order = {'get_cart_total' : 0, 'get_cart_items' : 0}
     context = {'items': items, 'order': order}
     return render(request, 'store/checkout.html', context)
+
+def product(request, pk):
+    products = Product.objects.get(id=pk)
+    print(products.price)
+    context = {'products': products}
+    return render(request, 'store/product.html', context)

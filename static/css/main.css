@@ -74,7 +74,11 @@ h1,h2,h3,h4,h5,h6{
     border-bottom: 1px solid #ececec;
 
 }
-
+.card-img-top {
+    border-top-left-radius: calc(0.25rem - 1px);
+    border-top-right-radius: calc(0.25rem - 1px);
+    object-fit: contain;
+}
 .quantity{
 	display: inline-block;
 	font-weight: 700;
@@ -94,7 +98,9 @@ h1,h2,h3,h4,h5,h6{
 .chg-quantity:hover{
 	opacity: .6;
 }
-
+#space{
+	margin-right: 5px;
+}
 .hidden{
 	display: none!important;
 }
