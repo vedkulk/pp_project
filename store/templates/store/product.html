@@ -7,11 +7,11 @@
                     <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="{{ products.image.url }}" alt="..." height="600px"/></div>
                     <div class="col-md-6">
                         <h1 class="display-5 fw-bolder">{{products.name}}</h1>
-                        <div class="fs-5 mb-5">
-                            <span></span>
-                        </div>
-                        <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium at dolorem quidem modi. Nam sequi consequatur obcaecati excepturi alias magni, accusamus eius blanditiis delectus ipsam minima ea iste laborum vero?</p>
-                        <h4 class="display-5 fw-bolder"><strong>Price: </strong>Rs {{products.price}}</h4>
+                        <br>
+                        <p class="lead">{{products.description}}</p>
+                        <p><strong>Author: </strong>{{products.author}}</p>
+                        <p><strong>Price: </strong>Rs {{products.price}}</p>
+                        <p><strong>No of pages:</strong> {{products.number_of_pages}}</p>
                         <div class="d-flex">
                             <button class="btn btn-outline-secondary add-btn mr-2">Add to Cart</button>
                                 <a class="btn btn-outline-dark" href="{% url 'store' %}"><i class="bi-cart-fill me-1"></i>&#x2190; Back to Store</a>

@@ -17,7 +17,9 @@ class Product(models.Model):
     price = models.FloatField()
     digital = models.BooleanField(default=False, null=True, blank=False)
     image = models.ImageField(null=True , blank=True)
-
+    author = models.CharField(max_length=100, null=True)
+    number_of_pages = models.IntegerField(null=True)
+    description = models.TextField(null=True)
     def __str__(self):
         return self.name
 
