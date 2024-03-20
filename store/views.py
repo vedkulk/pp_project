@@ -7,9 +7,10 @@ def store(request):
     context = {'products':products}
     return render(request, 'store/store.html', context)
 def login(request):
-    products= Product.objects.all()
-    context = {'products':products}
-    return render(request, 'store/login.html', context)
+    return render(request, 'store/login.html')
+
+def Registration(request):
+    return render(request, 'store/Registration.html')
 def cart(request):
 
     if request.user.is_authenticated:
