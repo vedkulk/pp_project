@@ -55,10 +55,10 @@ def product(request, pk):
 
 def updateItem(request):
     data = json.loads(request.body)
-    productId = data['productId']
+    productId = data['productID']
     action = data['action']
     print('Action: ', action)
-    print('roductId: ', productId)
+    print('ProductId: ', productId)
     customer = request.user.customer
     product = Product.objects.get(id=productId)
     order, created = Order.objects.get_or_create(
