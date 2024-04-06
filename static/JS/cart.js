@@ -29,7 +29,7 @@ function updateUserOrder(productID, action){
     .then((response)=>{
         return response.json();
     })
-    .then((data)=>{
+    .then((data) =>{
         console.log('data: ',data)
     })
 }
