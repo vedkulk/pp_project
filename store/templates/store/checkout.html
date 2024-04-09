@@ -31,7 +31,7 @@
 							<input class="form-control" type="text" name="zipcode" placeholder="Zip code..">
 						</div>
 						<div class="form-field">
-							<input class="form-control" type="text" name="country" placeholder="Zip code..">
+							<input class="form-control" type="text" name="country" placeholder="Country..">
 						</div>
 					</div>
 
@@ -41,7 +41,9 @@
 			</div>
           <br>
              <div class="box-element hidden" id="payment-info">
-                    <small>Razorpay Options</small>
+                    <small>Payment Options:</small>
+                    <img src="{% static 'images/razorpay_logo.jpg' %}" width="100px" height="100px">
+                    <button id="make-payment">Make Payment</button>
              </div>
         </div>
 
@@ -64,4 +66,13 @@
                </div>
         </div>
      </div>
+    <script type="text/javascript">
+        var form = document.getElementById('form')
+        form.addEventListener('submit',function (e){
+            e.preventDefault()
+            console.log('Form Submitted...')
+            document.getElementById('form-button').classList.add('hidden')
+            document.getElementById('payment-info').classList.remove('hidden')
+        })
+    </script>
 {% endblock content %}
