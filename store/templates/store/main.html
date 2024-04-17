@@ -35,31 +35,27 @@
       }
       const csrftoken = getToken("csrftoken");
 
-      function getCookie(name){
-        var cookieArr=document.cookie.split(";");
+      function getCookie(name) {
+        var cookieArr = document.cookie.split(";");
 
-        for(var i=0;i<cookieArr.length;i++){
-          var cookiePair=cookieArr[i].split("=");
-          if(name==cookiePair[0].trim){
+        for (var i = 0; i < cookieArr.length; i++) {
+          var cookiePair = cookieArr[i].split("=");
+          if (name == cookiePair[0].trim) {
             return decodeURIComponent(cookiePair[1]);
           }
-
         }
 
         return null;
       }
 
-      var cart=JSON.parse(getCookie('cart'))
-      if(cart==undefined)
-      {
-        cart={}
-        console.Log('Cart was created !')
-        document.cookie='cart=' + JSON.stringify(cart) + ";domain=;path=/"
+      var cart = JSON.parse(getCookie("cart"));
+      if (cart == undefined) {
+        cart = {};
+        console.log("Cart was created !");
+        document.cookie = "cart=" + JSON.stringify(cart) + ";domain=;path=/";
       }
 
-      console.Log('Cart :',cart)
-
-
+      console.log("Cart :", cart);
     </script>
   </head>
   <body>
@@ -86,7 +82,11 @@
           </li>
         </ul>
         <div class="form-inline my-2 my-lg-0">
+          {% if user.is_authenticated %}
+          <a href="{% url 'logout' %}" class="btn btn-warning">Logout</a>
+          {% else %}
           <a href="{% url 'login' %}" class="btn btn-warning">Login</a>
+          {% endif %}
           <a href="{% url 'cart' %}">
             <img id="cart-icon" src="{% static 'images/cart.png' %}" />
           </a>
