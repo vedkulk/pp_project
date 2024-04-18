@@ -7,6 +7,7 @@ import datetime
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login, authenticate, logout
 from .forms import CreateUserForm
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 
@@ -68,6 +69,7 @@ def Registration(request):
     return render(request, 'store/Registration.html', context)
 
 
+@login_required(login_url='login')
 def cart(request):
     if request.user.is_authenticated:
         customer = request.user.customer
@@ -86,6 +88,7 @@ def cart(request):
     return render(request, 'store/cart.html', context)
 
 
+@login_required(login_url='login')
 def checkout(request):
     if request.user.is_authenticated:
         customer = request.user.customer
