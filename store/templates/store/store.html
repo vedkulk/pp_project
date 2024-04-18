@@ -6,6 +6,7 @@
     <div class="box-element product">
       <h6><strong>{{product.name}}</strong></h6>
       <hr />
+      {% if user.is_authenticated %}
       <button
         data-product="{{ product.id }}"
         data-action="add"
@@ -13,6 +14,14 @@
       >
         Add to Cart
       </button>
+      {% else %}
+      <a
+        href="{% url 'login' %}"
+        class="btn btn-outline-secondary add-btn update-cart"
+      >
+        Add to Cart
+    </a>
+      {% endif %}
       <a class="btn btn-outline-success" href="{% url 'product' product.id %}"
         >View</a
       >

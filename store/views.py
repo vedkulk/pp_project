@@ -131,7 +131,6 @@ def checkout(request):
 
 def product(request, pk):
     products = Product.objects.get(id=pk)
-    print(products.price)
     context = {'products': products}
     return render(request, 'store/product.html', context)
 
